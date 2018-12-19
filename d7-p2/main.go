@@ -98,7 +98,7 @@ type node struct {
     status byte
 }
 
-func (n *node) string() string {
+func (n *node) String() string {
     switch n.status {
     case ready:
         return fmt.Sprintf("Node %c has \n no prereqs\n %d children %v\n and is ready to start\n",n.id,len(n.depend),n.depend)
@@ -145,7 +145,7 @@ func workElf(step <-chan *node, done *sync.WaitGroup) {
         }
         s.status = started
         workTime := time.Duration(delay + s.id - 'A' + 1)
-        time.Sleep((time.Second * workTime));
+        time.Sleep(time.Second * workTime);
         s.finish()
         done.Done()
     }

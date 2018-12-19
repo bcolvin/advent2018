@@ -41,15 +41,19 @@ func main() {
             }
         }
     }
-    cnt := 0
-    for i:= 0; i < 1000; i++ {
-        for j := 0; j < 1000; j++ {
-            if fab[i][j] == "X" {
-                cnt++
+    for _,xy := range xys {
+        isValid := true
+        for i := 0; i < xy.w; i++ {
+            for j := 0; j < xy.h; j++ {
+                if fab[j+xy.y][i+xy.x] == "X" {
+                    isValid = false
+                }
             }
         }
+        if isValid {
+            fmt.Println(xy.id)
+        }
     }
-    fmt.Println(cnt)
 }
 
 type xy struct {

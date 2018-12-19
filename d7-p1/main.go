@@ -55,7 +55,7 @@ func addSteps(steps map[int]*node)[]*node{
         if v.complete != true && len(v.prereq) == 0 {
             process = append(process,v)
         }
-        //fmt.Printf(v.string())
+        //fmt.Printf(v)
     }
     if process != nil {
         sort.Slice(process, func(i,j int) bool {
@@ -72,7 +72,7 @@ type node struct {
     complete bool
 }
 
-func (n *node) string() string {
+func (n *node) String() string {
     if n.complete {
         return fmt.Sprintf("Node %c has \n no prereqs\n %d children %v\n and is complete\n",n.id,len(n.depend),n.depend)
     }
