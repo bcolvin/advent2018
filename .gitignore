@@ -1,0 +1,13 @@
+.classpath
+.project
+.settings
+.gitkeep
+.DS_Store
+
+# Package Files #
+.idea
+*.iml
+*.ear
+*.class
+
+logs/
