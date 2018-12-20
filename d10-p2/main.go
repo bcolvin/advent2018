@@ -79,6 +79,7 @@ func (s *sky) grid() {
 		str[x+s.xShift] = '#'
 	}
 
+	fmt.Println(s.second)
 	for i := 0; i < s.y; i++ {
 		r := string(night[i])
 		if r == "" {
